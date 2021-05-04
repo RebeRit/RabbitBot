@@ -52,14 +52,14 @@ async def 도움말(ctx):
 
 @shop.command()
 async def 대출(ctx, ctx1 = None, ctx2 = None, *, text = None):
+    
+    await ctx.channel.purge(limit = 1)
+        
+    seller = str(ctx1)
+    buyer = str(ctx2)
+    item = str(text)
 
     if ctx1 != None and ctx2 != None and text != None:
-
-        await ctx.channel.purge(limit = 1)
-        
-        seller = str(ctx1)
-        buyer = str(ctx2)
-        item = str(text)
         
         embed = discord.Embed(title = "대출 확인 글 \U0001F4B0", description = "대출한 내역을 확인하는 글입니다.", color = 0xFF5500)
         embed.add_field(name = "채권자 닉네임", value = seller, inline = False)
@@ -78,15 +78,14 @@ async def 대출(ctx, ctx1 = None, ctx2 = None, *, text = None):
 
 @shop.command()
 async def 구매(ctx, ctx1 = None, *, text = None):
+    
+    await ctx.channel.purge(limit = 1)
+        
+    game = str(ctx1)
+    item = str(text)
 
     if ctx1 != None and text != None:
-
-        await ctx.channel.purge(limit = 1)
-
-        game = str(ctx1)
-        item = str(text)
         
-
         embed = discord.Embed(title = "아이템 구매 글 \U0001F9F1", description = ctx.author.name + "님이 아이템의 판매자를 찾는 글입니다.", color = 0x9CFF00)
         embed.add_field(name = "거래 대상 게임", value = game, inline = False)
         embed.add_field(name = "구매 희망 아이템", value = item, inline = False)
@@ -104,13 +103,13 @@ async def 구매(ctx, ctx1 = None, *, text = None):
 
 @shop.command()
 async def 판매(ctx, ctx1 = None, *, text = None):
+    
+    await ctx.channel.purge(limit = 1)
+
+    game = str(ctx1)
+    item = str(text)
 
     if ctx1 != None and text != None:
-
-        await ctx.channel.purge(limit = 1)
-
-        game = str(ctx1)
-        item = str(text)
 
         embed = discord.Embed(title = "아이템 판매 글 \U0001F9F1", description = ctx.author.name + "님이 아이템의 구매자를 찾는 글입니다.", color = 0x9CFFFD)
         embed.add_field(name = "거래 대상 게임", value = game, inline = False)
