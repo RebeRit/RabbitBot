@@ -11,7 +11,7 @@ shop = commands.Bot(command_prefix='#')
 
 @shop.event
 async def on_ready():
-    print('디스코드 테스트 봇')
+    print('Discord Rabbit Bot')
     print(shop.user.name)
     game = discord.Game('#도움말 확인해줘요 :D')
     await shop.change_presence(status=discord.Status.idle, activity=game)
